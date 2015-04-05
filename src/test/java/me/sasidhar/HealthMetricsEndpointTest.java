@@ -18,9 +18,6 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
-import javax.swing.text.AbstractDocument;
-
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 import static com.jayway.restassured.RestAssured.given;

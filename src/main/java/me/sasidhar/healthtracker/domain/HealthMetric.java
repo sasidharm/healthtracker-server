@@ -3,7 +3,6 @@ package me.sasidhar.healthtracker.domain;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field;
 
 /**
  * Created by Sasidhar on 4/4/15.

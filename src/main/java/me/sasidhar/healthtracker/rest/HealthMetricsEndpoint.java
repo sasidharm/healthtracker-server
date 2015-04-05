@@ -5,7 +5,6 @@ import me.sasidhar.healthtracker.domain.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.inject.Named;
-import javax.print.attribute.standard.Media;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -14,8 +13,6 @@ import java.util.List;
 @Named
 @Path("/")
 public class HealthMetricsEndpoint {
-    @Autowired
-    private UserMetricsRepository userMetricsRepository;
 
     @Autowired
     private HealthTrackerUserRepository userRepository;
@@ -41,8 +38,7 @@ public class HealthMetricsEndpoint {
                     .build();
         }
         List<HealthMetric> metrics = metricsRepository.findByUserId(user.getId());
-        Response response = Response.ok(metrics).build();
-        return response;
+        return Response.ok(metrics).build();
     }
 
     @POST

@@ -2,7 +2,6 @@ package me.sasidhar;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
 import me.sasidhar.healthtracker.domain.mongo.UnitReadConverter;
 import me.sasidhar.healthtracker.domain.mongo.UnitWriteConverter;
@@ -16,12 +15,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.convert.converter.Converter;
-import org.springframework.http.MediaType;
-import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.stereotype.Component;
 
-import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.List;
 
@@ -54,7 +49,7 @@ public class Bootstrap extends SpringBootServletInitializer {
     }
 
     @Bean
-    public List<Converter> customMongoConversions() {
+    public List<Converter<?, ?>> customMongoConversions() {
         return Arrays.asList(new UnitReadConverter(), new UnitWriteConverter());
     }
 

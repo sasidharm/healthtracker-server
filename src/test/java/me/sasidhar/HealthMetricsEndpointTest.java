@@ -52,7 +52,7 @@ public class HealthMetricsEndpointTest {
                 .contentType(is("application/json;charset=UTF-8"));
 
         response.body("[0].name", is("Weight"));
-        response.body("[0].user.id", is("55211def4b2845d49f70c72e"));
+        response.body("[0].user.id", is("57005a278d6a6892a68ba8f6"));
     }
 
     @Test
